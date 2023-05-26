@@ -119,7 +119,7 @@ impl<'a, I: Iterator<Item = &'a syn::Attribute>> From<I> for FieldAttrs {
         let mut field_attrs = Self::default();
 
         for attr in iter {
-            if !attr.path.is_ident("merge") {
+            if !attr.path().is_ident("merge") {
                 continue;
             }
 
